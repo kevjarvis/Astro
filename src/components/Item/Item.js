@@ -1,7 +1,6 @@
-import { ChevronRight, StarFill } from "react-bootstrap-icons";
+import { ChevronRight } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import Rating from "../Rating/Rating";
-import ItemCount from "../ItemCount/ItemCount";
 import ProductPrice from "../ProductPrice/ProductPrice";
 import './Item.css';
 

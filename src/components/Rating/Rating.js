@@ -3,7 +3,6 @@ import './Rating.css';
 
 const Rating = ({rating}) => {
   const roundRating = Math.round(rating);
-  console.log(rating)
 
   return (
     <div className={'Rating'}>

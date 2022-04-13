@@ -15,8 +15,8 @@ const NavBar = () => {
       
       <div className={'Navbar-menus'}>
         <ul>
-          <li><NavLink to={'/category/aficionado'}>Para aficionados</NavLink></li>
-          <li><NavLink to={'/category/profesional'}>Para profesionales</NavLink></li>
+          <li><NavLink to={'/category/aficionado'} className={({ isActive }) => (isActive ? 'isActive' : null)} >Para aficionados</NavLink></li>
+          <li><NavLink to={'/category/profesional'} className={({ isActive }) => (isActive ? 'isActive' : null)} >Para profesionales</NavLink></li>
         </ul>
       </div>
 

@@ -1,5 +1,6 @@
 .ItemDetail {
   display: flex;
+  height: calc(100vh - 100px);
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;

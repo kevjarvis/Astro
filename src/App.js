@@ -14,7 +14,7 @@ const App = () => {
           <Route path="/list" element={<ItemListContainer />} />
           <Route path="/detail/:productID" element={<ItemDetailContainer />} />
           <Route path="/category/:categoryID" element={<ItemListContainer />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
+          <Route path="*" element={<h1 style={{textAlign: 'center'}}>404 Not Found</h1>} />
         </Routes>
       </BrowserRouter>
     </>
