@@ -1,0 +1,62 @@
+ul {
+    display: flex;
+    gap: 0.8rem;
+    list-style-type: none;
+}
+
+a {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.Navbar {
+    display: flex;
+    padding: 1rem 4.5rem;
+    gap: 2rem;
+    align-items: center;
+}
+
+.Logo {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.Logo-img {
+    width: 2.5rem;
+    height: 2.4rem;
+}
+
+.Logo-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #34495E;
+}
+
+.Navbar-menus {
+    flex-grow: 2;
+}
+
+
+.Navbar-menus a {
+    color: #34495E;
+    padding: 1.2rem;
+}
+
+.Navbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.catalogButton {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0.7rem 1.3rem;
+    background-color: #34495E;
+    border-radius: 5px;
+    color: white;
+}

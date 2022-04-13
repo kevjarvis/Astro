@@ -1,0 +1,45 @@
+.card-product {
+  display: flex;
+  flex-flow: column nowrap;
+  width: calc(18vw + 2rem);
+  align-items: flex-start;
+  padding: 20px 18px;
+  gap: 1rem;
+  border-radius: 13px;
+  border: solid 1px #D7D7D7;
+}
+
+.card-product.noStock {
+  opacity: 40%;
+}
+
+.product-img {
+  height: 166px;
+  align-self: center;
+}
+
+.product-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #000;
+}
+
+.button {
+  display: flex;
+  align-self: flex-end;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 5px;
+  background-color: transparent;
+  padding-block: 0.5rem;
+  color: #000;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}

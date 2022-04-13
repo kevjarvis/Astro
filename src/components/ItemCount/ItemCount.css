@@ -1,0 +1,58 @@
+.ItemCount {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  width: 18vw;
+  background-color: #34495e17;
+  padding: 1rem;
+  border-radius: 0 0 12px 12px;
+}
+
+.ItemCount button {
+  border: solid 1px #34495e;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background-color: #34495e;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+.CountControls {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.CountControls button {
+  background-color: transparent;
+  border: none;
+  padding-inline: 1rem;
+  cursor: pointer;
+  padding-block: 0.4rem;
+  color: #34495e;
+}
+
+.CountControls button:disabled {
+  background-color: transparent;
+  color: #34495e91;
+}
+
+.CountControls span {
+  font-size: 1rem;
+  cursor: default;
+}
+
+span.hasNoStock {
+  opacity: 50%;
+}
+
+button:disabled {
+  background-color: #34495e17;
+  border-color: transparent;
+  color: #34495ea8;
+  cursor: initial;
+}

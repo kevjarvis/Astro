@@ -1,0 +1,6 @@
+.Rating {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
+  color: #21BA8C;
+}

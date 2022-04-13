@@ -1,0 +1,49 @@
+.ItemDetail {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ProductInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: center;
+}
+
+img {
+  height: 250px;
+  border-radius: 9999px;
+}
+
+.ProductInfo__category {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #696969;
+;
+}
+
+.ProductInfo__name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+}
+
+.ProductInfo__price {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  color: #000;
+
+}
+
+.ProductInfo__description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #000;
+  max-width: 35vw;
+}
