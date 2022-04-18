@@ -22,8 +22,8 @@ const NavBar = () => {
 
       <div>
         <ul className={'Navbar-buttons'}>
-          <li><CartWidget /></li>
-          <li><a href="#" className={'catalogButton'}>Ver catálogo</a></li>
+          <li><Link to="/cart"><CartWidget /></Link></li>
+          <li><Link to="/" className={'catalogButton'}>Ver catálogo</Link></li>
         </ul>
       </div>
 
