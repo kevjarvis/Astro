@@ -1,11 +1,16 @@
 import './ItemDetail.css';
+import { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import ProductPrice from '../ProductPrice/ProductPrice';
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({ item }) => {
+  const [quantity, setQuantity] = useState(0);
 
-  const onAdd = (quantity) => alert(`${quantity} productos agregados correctamente`)
+  const onAdd = (quantity) => {
+    setQuantity(quantity)
+  }
 
   return (
     <div className={'ItemDetail'}>
@@ -15,7 +20,12 @@ const ItemDetail = ({ item }) => {
         <h1 className={'ProductInfo__name'}>{item.title}</h1>
         { item.prices != undefined ? <ProductPrice prices={item.prices}/> : null }
         <p className={'ProductInfo__description'}>{item.description}</p>
-        { item.stock != undefined ? <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/> : null }
+
+        { item.stock != undefined ? 
+          quantity > 0 ?
+          <Link to='/cart'> Terminar compra </Link> :
+          <ItemCount initial={1} stock={item.stock} onAdd={onAdd} /> :
+          null }
         
       </div>
     </div>
