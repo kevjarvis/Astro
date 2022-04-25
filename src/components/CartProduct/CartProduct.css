@@ -1,0 +1,32 @@
+.CartProduct {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+  border-top: solid 1px rgb(212, 212, 212);
+  border-bottom: solid 1px rgb(212, 212, 212);
+}
+
+.CartProduct__img {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 10px;
+  border: solid 2px rgb(194, 193, 193);
+  padding: 0.5rem;
+}
+
+.CartProduct__quantity {
+  justify-self: center;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.CartProduct__trashIcon {
+  justify-self: flex-end;
+  color: rgb(117, 0, 0);
+}

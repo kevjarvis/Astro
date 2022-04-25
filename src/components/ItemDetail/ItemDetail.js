@@ -16,6 +16,7 @@ const ItemDetail = ({ item }) => {
     const productInfo = {
       id: item.id,
       name: item.title,
+      img: item.pictureUrl,
       price: item.prices.priceNow,
       quantity: count
     }
