@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { API } from '../../asyncmock';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import ItemDetail from '../ItemDetail/ItemDetail';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { firestoreDB } from '../../services/firebase';
 import './ItemListContainer.css';
 
 
@@ -13,8 +12,18 @@ const ItemListContainer = (props) => {
   const { categoryID } = useParams()
 
   useEffect(() => {
-    API.then( prods => { setProducts(prods) } )
-  }, []) 
+    
+    const collectionRef = categoryID
+      ? query(collection(firestoreDB, 'products'), where('category', '==', categoryID))
+      : collection(firestoreDB, 'products')
+
+    getDocs(collectionRef).then(res => {
+      const products = res.docs.map(doc => {
+        return {id: doc.id, ...doc.data()}
+      })
+      setProducts(products)
+    })
+  }, [categoryID]) 
 
   return (
     <section className={'Products-section'}>
@@ -27,7 +36,7 @@ const ItemListContainer = (props) => {
             'Bienvenido a Astro!'
         }
       </h1>
-      {categoryID ? <ItemList items={products} type={categoryID} /> : <ItemList items={products} /> }
+      <ItemList items={products}/>
       
     </section>
   )

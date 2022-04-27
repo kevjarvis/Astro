@@ -1,8 +1,24 @@
 import './NavBar.css';
 import { Link, NavLink } from 'react-router-dom';
 import CartWidget from "../CartWidget/CartWidget";
+import { useEffect, useState } from 'react';
+import { firestoreDB } from '../../services/firebase';
+import { getDocs, collection } from 'firebase/firestore';
 
 const NavBar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getDocs(collection(firestoreDB, 'categories')).then(res => {
+      const categories = res.docs.map(cat => {
+        return {id: cat.id, ...cat.data()}
+      })
+
+      setCategories(categories);
+    })
+
+  }, [])
+
   return (
     <nav className={'Navbar'}>
 
@@ -15,8 +31,9 @@ const NavBar = () => {
       
       <div className={'Navbar-menus'}>
         <ul>
-          <li><NavLink to={'/category/aficionado'} className={({ isActive }) => (isActive ? 'isActive' : null)} >Para aficionados</NavLink></li>
-          <li><NavLink to={'/category/profesional'} className={({ isActive }) => (isActive ? 'isActive' : null)} >Para profesionales</NavLink></li>
+          {categories.map(cat => 
+            <li key={cat.id}><NavLink to={'/category/'+ cat.id} className={({ isActive }) => (isActive ? 'isActive' : null)} >{cat.description}</NavLink></li>
+          )}
         </ul>
       </div>
 
