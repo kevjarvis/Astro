@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DashLg, PlusLg } from "react-bootstrap-icons";
 import './ItemCount.css';
 
-const ItemCount = ({initial, stock, onAdd, show}) => {
+const ItemCount = ({initial, stock, onAdd}) => {
   const [count, setCount] = useState(initial);
   
   const isCountLessOrEqualToZero = count <= initial;
