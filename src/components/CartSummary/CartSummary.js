@@ -4,10 +4,7 @@ import './CartSummary.css';
 
 const CartSummary = () => {
 
-  const {cart} = useContext(CartContext);
-
-  const totalOrder = cart.reduce((total, prod) => total + prod.quantity * prod.price, 0);
-  const shipping = cart.length ? 80 : 0;
+  const {getTotalWithShipping, shipping, getTotal} = useContext(CartContext);
 
   return (
     <aside className='CartSummary'>
@@ -15,7 +12,7 @@ const CartSummary = () => {
 
       <div className='CartSummary__infoSlot'>
         <strong>Total de la órden</strong>
-        <span>$ {totalOrder}</span>
+        <span>$ {getTotal()}</span>
       </div>
 
       <div className='CartSummary__infoSlot'>
@@ -26,7 +23,7 @@ const CartSummary = () => {
 
       <div className='CartSummary__infoSlot CartSummary__infoSlot--total'>
         <strong>Total</strong>
-        <strong>$ {totalOrder+shipping}</strong>
+        <strong>$ {getTotalWithShipping()}</strong>
       </div>
 
     </aside>

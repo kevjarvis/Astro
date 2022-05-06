@@ -1,0 +1,26 @@
+.orderButton {
+  grid-area: CTA;
+  align-self: flex-start;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0.7rem 1.3rem;
+  background-color: #34495E;
+  border-radius: 5px;
+  color: white;
+}
+
+.CartForm {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.CartForm input {
+  border: solid 1px black;
+  padding: 0.6rem;
+  border-radius: 5px;
+}
+
+.CartForm label {
+  font-weight: bold;
+}
